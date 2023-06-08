@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import BooksList from 'components/BooksList';
 
-const Book = () => {
+const BooksLogics = () => {
   const [books, setBooks] = useState([{
     id: uuidv4(), category: 'Action', title: 'The Hunter Games', author: 'Suzanne Collins', progress: '64%', currentChapter: '17',
   }]);
@@ -17,4 +17,4 @@ const Book = () => {
     </div>
   );
 };
-export default Book;
+export default BooksLogics;

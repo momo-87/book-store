@@ -1,6 +1,6 @@
 const Categories = () => (
   <div>
-    <h1>Categories Page Content</h1>
+    <h1>Book Categories Page</h1>
   </div>
 );
 export default Categories;

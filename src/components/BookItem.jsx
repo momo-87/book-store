@@ -42,7 +42,7 @@ BookItem.propTypes = {
     title: PropTypes.string,
     author: PropTypes.string,
     progress: PropTypes.string,
-    currentChapter: PropTypes.number,
+    currentChapter: PropTypes.string,
   }).isRequired,
   delBook: PropTypes.func.isRequired,
 };
