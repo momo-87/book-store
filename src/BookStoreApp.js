@@ -1,13 +1,13 @@
+import { Routes, Route } from 'react-router-dom';
+import Books from 'routes/Books';
+import Categories from 'routes/Categories';
+
 function BookStoreApp() {
   return (
-    <div>
-      <header>
-        <p>
-          Welcome to BooksStore React App
-        </p>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<Books />} />
+      <Route path="categories" element={<Categories />} />
+    </Routes>
   );
 }
-
 export default BookStoreApp;
