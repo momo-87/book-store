@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ImUser } from 'react-icons/im';
+import 'styles/Navbar.scss';
 
 const Navbar = () => {
   const links = [
@@ -8,8 +9,8 @@ const Navbar = () => {
   ];
   return (
     <nav>
-      <div>
-        <div>BookStore CMS</div>
+      <div className="logo-menu-box">
+        <div className="logo-box">BookStore CMS</div>
         <ul>
           {links.map((link) => (
             <li key={link.path}>
@@ -18,7 +19,7 @@ const Navbar = () => {
           ))}
         </ul>
       </div>
-      <div>
+      <div className="user">
         <ImUser />
       </div>
     </nav>

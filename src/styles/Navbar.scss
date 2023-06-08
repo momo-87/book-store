@@ -1,0 +1,92 @@
+@media only screen and (min-width: 320px) {
+    nav {
+        display: flex;
+        background-color: #ffffff;
+        height: 10vh;
+        align-items: center;
+        
+
+        div.logo-menu-box {
+            display: flex;
+            gap: 2.5%;
+            width: 95%;
+            align-items: center;
+
+            div.logo-box {
+                width: 45%;
+                font-size: 1rem;
+                color: #0290ff;
+                font-weight: bold;
+            }
+
+            ul {
+                display: flex;
+                list-style: none;
+                gap: 10%;
+                justify-content: space-between;
+
+                li a {
+                    text-decoration: none;
+                    font-size: 0.8rem;
+                    color: #121212;
+                }
+            }
+        }
+
+        div.user {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #0290ff;
+            width: 8%;
+            aspect-ratio: 1;
+            border: 1px solid #e8e8e8;
+            border-radius: 50%;
+        }
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    nav {
+        height: 5.875rem;
+        
+        div.logo-menu-box {
+            width: 42.3%;
+            justify-content: space-between;
+
+            div.logo-box {
+                width: 45%;
+                font-size: 1.875rem;
+                color: #0290ff;
+                font-weight: bold;
+                margin-left: 7.14%;
+                width: 40.5%;
+            }
+
+            ul {
+                display: flex;
+                list-style: none;
+                justify-content: space-between;
+                width: 34.63%;
+
+                li a {
+                    text-decoration: none;
+                    font-size: 0.813rem;
+                    color: #121212;
+                }
+            }
+        }
+
+        div.user {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #0290ff;
+            width: 3.21%;
+            aspect-ratio: 1;
+            border: 1px solid #e8e8e8;
+            border-radius: 50%;
+            margin-left: 47.43%;
+        }
+    }
+}
