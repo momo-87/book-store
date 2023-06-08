@@ -22,4 +22,5 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-usefulCommands.txt
+linters.txt
+react.txt
