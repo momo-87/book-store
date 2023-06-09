@@ -1,3 +1,17 @@
+/* Import two google font in the same URL */
+/* @import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto+Slab'); */
+
+
+@font-face {
+    font-family: Montserrat;
+    src: url('../fonts/montserrat/Montserrat-Regular.ttf');
+}
+
+@font-face {
+    font-family: RobotoSlab;
+    src: url('../fonts/roboto-slab/RobotoSlab-Regular.ttf');
+}
+
 
 * {
     box-sizing: border-box;

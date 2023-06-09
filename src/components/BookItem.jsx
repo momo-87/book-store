@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 const BookItem = ({ book, delBook }) => (
   <li>
-    <div>
+    <div className="left-div">
       <div>
         <span>{book.category}</span>
         <h3>{book.title}</h3>

@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <nav>
       <div className="logo-menu-box">
-        <div className="logo-box">BookStore CMS</div>
+        <div className="logo-box">Bookstore CMS</div>
         <ul>
           {links.map((link) => (
             <li key={link.path}>

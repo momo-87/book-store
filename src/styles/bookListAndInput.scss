@@ -1,0 +1,42 @@
+@media only screen and (min-width: 1600px) {
+    div.bookList-bookInput-box {
+        border: 2px solid black;
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+        align-items: center;
+        padding-top: 2.375rem;
+
+        ul {
+            border: 1px solid red;
+            width: 85.71%;
+            display: flex;
+            flex-direction: column;
+            gap: 0.938rem;
+
+            li {
+                background-color: #ffffff;
+                list-style: none;
+                display: flex;
+                align-items: center;
+                height: 10.625rem;
+
+                div.left-div {
+                    border: 1px solid black;
+                    margin-left: 2.25%;
+                    width: 18.50%;
+
+                    span:nth-child(1) {
+                        font-size: 0.875rem;
+                        color: #121212;
+                        opacity: 0.5;
+                        font-family: 'Montserrat', sans-serif;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+
+
+    }
+}
