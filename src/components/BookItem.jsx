@@ -8,7 +8,7 @@ const BookItem = ({ book, delBook }) => (
         <h3>{book.title}</h3>
         <span>{book.author}</span>
       </div>
-      <div>
+      <div className="buttons-div">
         <button type="button">
           Comments
         </button>
@@ -20,10 +20,16 @@ const BookItem = ({ book, delBook }) => (
         </button>
       </div>
     </div>
-    <div>
-      {book.progress}
+    <div className="progress-div">
+      <div className="diagram-box">
+        empty
+      </div>
+      <div className="progress-status">
+        <span>{book.progress}</span>
+        <span>Completed</span>
+      </div>
     </div>
-    <div>
+    <div className="current-chapter">
       <span>CURRENT CHAPTER</span>
       <span>
         CHAPTER

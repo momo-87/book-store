@@ -6,7 +6,7 @@ import 'styles/bookListAndInput.scss';
 
 const BooksLogics = () => {
   const [books, setBooks] = useState([{
-    id: uuidv4(), category: 'Action', title: 'The Hunter Games', author: 'Suzanne Collins', progress: '64%', currentChapter: '17',
+    id: uuidv4(), category: 'Action', title: 'The Hunter Games', author: 'Suzanne Collins', progress: '100%', currentChapter: '17',
   }]);
 
   const handleDelete = (id) => {
