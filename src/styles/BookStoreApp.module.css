@@ -1,41 +1,39 @@
 /* Import two google font in the same URL */
+
 /* @import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto+Slab'); */
 
-
 @font-face {
-    font-family: Montserrat;
-    src: url('../fonts/montserrat/Montserrat-Regular.ttf');
+  font-family: Montserrat;
+  src: url('../fonts/montserrat/Montserrat-Regular.ttf');
 }
 
 @font-face {
-    font-family: RobotoSlab;
-    src: url('../fonts/roboto-slab/RobotoSlab-Regular.ttf');
+  font-family: RobotoSlab;
+  src: url('../fonts/roboto-slab/RobotoSlab-Regular.ttf');
 }
-
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    background-color: #f5f6fa;
+  background-color: #f5f6fa;
 }
 
-
 @media only screen and (min-width: 320px) {
-    .appWrapper {
-        width: 95%;
-        margin: 3rem 2.5% 11.75rem 2.5%;
-        background-color: #fafafa;
-        box-shadow: 3px 3px 3px gray;
-    }
+  .appWrapper {
+    width: 95%;
+    margin: 3rem 2.5% 11.75rem 2.5%;
+    background-color: #fafafa;
+    box-shadow: 3px 3px 3px gray;
+  }
 }
 
 @media only screen and (min-width: 1600px) {
-    .appWrapper {
-        width: 87.5%;
-        margin: 9.3rem 6.25% 11.75rem 6.25%;
-    }
+  .appWrapper {
+    width: 87.5%;
+    margin: 9.3rem 6.25% 11.75rem 6.25%;
+  }
 }

@@ -30,12 +30,12 @@ const BookItem = ({ book, delBook }) => (
       </div>
     </div>
     <div className="current-chapter">
-      <span>CURRENT CHAPTER</span>
-      <span>
+      <span className="title">CURRENT CHAPTER</span>
+      <span className="data">
         CHAPTER
         {book.currentChapter}
       </span>
-      <button type="button">UPDATE PROGRESS</button>
+      <button type="button" className="update-progress">UPDATE PROGRESS</button>
     </div>
   </li>
 );
