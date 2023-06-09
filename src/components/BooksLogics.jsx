@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import BooksList from 'components/BooksList';
+import BookInput from 'components/BookInput';
 
 const BooksLogics = () => {
   const [books, setBooks] = useState([{
@@ -14,6 +15,7 @@ const BooksLogics = () => {
   return (
     <div>
       <BooksList delBook={handleDelete} books={books} />
+      <BookInput />
     </div>
   );
 };
