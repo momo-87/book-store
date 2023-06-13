@@ -1,7 +1,8 @@
 import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 import { removeBook } from 'redux/books/bookSlice';
 
-const RemoveBookBtn = (id) => {
+const RemoveBookBtn = ({ id }) => {
   const dispatch = useDispatch();
   const handleRemoveBook = () => dispatch(removeBook(id));
   return (
@@ -9,8 +10,12 @@ const RemoveBookBtn = (id) => {
       onClick={handleRemoveBook}
       type="button"
     >
-      Add Book
+      remove
     </button>
   );
 };
 export default RemoveBookBtn;
+
+RemoveBookBtn.propTypes = {
+  id: PropTypes.string.isRequired,
+};
