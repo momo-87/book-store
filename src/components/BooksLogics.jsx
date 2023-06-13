@@ -8,17 +8,14 @@ import 'styles/bookListAndInput.scss';
 import { useSelector, useDispatch } from 'react-redux';
 
 const BooksLogics = () => {
+  const dispatch = useDispatch();
   // Get all books items (from Redux store and hard coded booksItems.js file)
   const storedBooks = useSelector((state) => state.books);
   const [books, setBooks] = useState([...storedBooks, ...bookItems]);
-  // Handle delete books
-  const handleDelete = (id) => {
-    setBooks([...books.filter((book) => book.id !== id)]);
-  };
+
   // Get authon name and book title from inputs
   const [author, setAuthor] = useState('');
   const [title, setTitle] = useState('');
-  const dispatch = useDispatch();
   const handleAuthor = (e) => (setAuthor(e.target.value));
   const handleTitle = (e) => (setTitle(e.target.value));
   // Handle add book
@@ -38,7 +35,7 @@ const BooksLogics = () => {
 
   return (
     <div className="bookList-bookInput-box">
-      <BooksList delBook={handleDelete} books={books} />
+      <BooksList books={books} />
       <BookInput
         handleAuthor={handleAuthor}
         handleTitle={handleTitle}
