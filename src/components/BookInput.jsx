@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
+import { addBook } from 'redux/books/bookSlice';
 
 const BookInput = () => {
   const [author, setAuthor] = useState('');
@@ -18,7 +19,7 @@ const BookInput = () => {
         title: bookTitle,
         author: bookAuthor,
       };
-      dispatch({ type: 'addBook', payload: newBook });
+      dispatch(addBook(newBook));
     }
   };
 
