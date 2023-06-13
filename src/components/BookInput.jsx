@@ -1,7 +1,7 @@
 // import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import AddBookBtn from 'redux/books/AddBookBtn';
+import AddBookBtn from 'components/AddBookBtn';
 
 const BookInput = () => {
   const [author, setAuthor] = useState('');

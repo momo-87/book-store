@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import RemoveBookBtn from 'redux/books/RemoveBookBtn';
+import RemoveBookBtn from 'components/RemoveBookBtn';
 
 const BookItem = ({ book }) => (
   <li>
