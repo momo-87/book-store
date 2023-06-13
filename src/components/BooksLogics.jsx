@@ -2,21 +2,45 @@ import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import BooksList from 'components/BooksList';
 import BookInput from 'components/BookInput';
+import bookItems from 'redux/books/bookItems';
+import { addBook } from 'redux/books/bookSlice';
 import 'styles/bookListAndInput.scss';
+import { useSelector, useDispatch } from 'react-redux';
 
 const BooksLogics = () => {
-  const [books, setBooks] = useState([{
-    id: uuidv4(), category: 'Action', title: 'The Hunter Games', author: 'Suzanne Collins', progress: '100%', currentChapter: '17',
-  }]);
+  const dispatch = useDispatch();
+  // Get all books items (from Redux store and hard coded booksItems.js file)
+  const storedBooks = useSelector((state) => state.books);
+  const [books, setBooks] = useState([...storedBooks, ...bookItems]);
 
-  const handleDelete = (id) => {
-    setBooks([...books.filter((book) => book.id !== id)]);
+  // Get authon name and book title from inputs
+  const [author, setAuthor] = useState('');
+  const [title, setTitle] = useState('');
+  const handleAuthor = (e) => (setAuthor(e.target.value));
+  const handleTitle = (e) => (setTitle(e.target.value));
+  // Handle add book
+  const handleAddBtn = () => {
+    const bookTitle = title.trim();
+    const bookAuthor = author.trim();
+    if (bookTitle && bookAuthor) {
+      const newBook = {
+        id: uuidv4(),
+        title: bookTitle,
+        author: bookAuthor,
+      };
+      dispatch(addBook(newBook));
+      setBooks([...books, newBook]);
+    }
   };
 
   return (
     <div className="bookList-bookInput-box">
-      <BooksList delBook={handleDelete} books={books} />
-      <BookInput />
+      <BooksList books={books} />
+      <BookInput
+        handleAuthor={handleAuthor}
+        handleTitle={handleTitle}
+        handleAddBtn={handleAddBtn}
+      />
     </div>
   );
 };
