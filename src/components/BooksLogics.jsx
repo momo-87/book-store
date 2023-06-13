@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import BooksList from 'components/BooksList';
 import BookInput from 'components/BookInput';
-import bookItems from 'redux/books/bookItems';
 import { addBook } from 'redux/books/bookSlice';
 import 'styles/bookListAndInput.scss';
 import { useSelector, useDispatch } from 'react-redux';
@@ -11,7 +10,7 @@ const BooksLogics = () => {
   const dispatch = useDispatch();
   // Get all books items (from Redux store and hard coded booksItems.js file)
   const storedBooks = useSelector((state) => state.books);
-  const [books, setBooks] = useState([...storedBooks, ...bookItems]);
+  const [books, setBooks] = useState([...storedBooks]);
 
   // Get authon name and book title from inputs
   const [author, setAuthor] = useState('');

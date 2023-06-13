@@ -4,7 +4,7 @@ import BookItem from './BookItem';
 const BooksList = ({ books }) => (
   <ul>
     {[...books].map((book) => (
-      <BookItem book={book} key={book.id} />
+      <BookItem book={book} key={book.item_id} />
     ))}
   </ul>
 );
