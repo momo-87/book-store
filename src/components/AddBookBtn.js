@@ -30,7 +30,7 @@ const AddBookBtn = (newId, newTitle, newAuthor) => {
       onClick={handleButtonClick(newBook)}
       type="button"
     >
-      Add Book
+      ADD BOOK
     </button>
   );
 };

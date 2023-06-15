@@ -1,11 +1,11 @@
 @media only screen and (min-width: 1600px) {
   div.bookList-bookInput-box {
-    border: 2px solid black;
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
     align-items: center;
     padding-top: 2.375rem;
+    padding-bottom: 16.563rem;
 
     ul {
       width: 85.71%;
@@ -141,5 +141,65 @@
         }
       }
     }
+
+    form {
+      border-top: 1px solid #e8e8e8;
+      width: 85.71%;
+      padding-top: 1.183rem;
+
+      span {
+        font-family: Montserrat, sans-serif;
+        font-size: 1.25rem;
+        font-weight: bold;
+        color: #888;
+        letter-spacing: -0.18px;
+      }
+
+      div.inputs-container {
+        margin-top: 1.188rem;
+        display: flex;
+        gap: 2.83%;
+
+        input {
+          height: 2.813rem;
+          border: 1px solid #e8e8e8;
+          border-radius: 4px;
+          padding-left: 1rem;
+        }
+
+        ::placeholder {
+          font-family: Montserrat, sans-serif;
+          font-size: 1rem;
+          color: #c4c4c4;
+          letter-spacing: -0.15px;
+        }
+
+        input.book-title {
+          width: 55.33%;
+        }
+
+        input.book-author {
+          width: 23.75%;
+        }
+
+        button {
+          width: 15.33%;
+          border-radius: 3px;
+          background-color: #0290ff;
+          color: #ffffff;
+          font-size: 0.813;
+          font-weight: bold;
+          font-family: RobotoSlab, sans-serif;
+          letter-spacing: 0.5px;
+          border: none;
+        }
+      }
+    }
+
+
+
+
+
+
   }
 }
