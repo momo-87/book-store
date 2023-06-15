@@ -1,8 +1,11 @@
-import BooksLogics from 'components/BooksLogics';
+import BooksList from 'components/BooksList';
+import BookInput from 'components/BookInput';
+import 'styles/bookListAndInput.scss';
 
-const Books = () => (
-  <div>
-    <BooksLogics />
+const Home = () => (
+  <div className="bookList-bookInput-box">
+    <BooksList />
+    <BookInput />
   </div>
 );
-export default Books;
+export default Home;
