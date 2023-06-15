@@ -11,7 +11,7 @@ const BookInput = () => {
   return (
     <form>
       {error ? <p>{error}</p> : undefined}
-      <span>ADD NEW BOOK</span>
+      <span className="form-title">ADD NEW BOOK</span>
       <div className="inputs-container">
         <input
           className="book-title"

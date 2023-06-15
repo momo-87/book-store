@@ -147,7 +147,7 @@
       width: 85.71%;
       padding-top: 1.183rem;
 
-      span {
+      span.form-title {
         font-family: Montserrat, sans-serif;
         font-size: 1.25rem;
         font-weight: bold;
@@ -182,12 +182,12 @@
           width: 23.75%;
         }
 
-        button {
+        button.add-book {
           width: 15.33%;
           border-radius: 3px;
           background-color: #0290ff;
-          color: #ffffff;
-          font-size: 0.813;
+          color: #fff;
+          font-size: 0.813rem;
           font-weight: bold;
           font-family: RobotoSlab, sans-serif;
           letter-spacing: 0.5px;
@@ -195,11 +195,5 @@
         }
       }
     }
-
-
-
-
-
-
   }
 }
