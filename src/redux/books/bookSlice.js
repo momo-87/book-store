@@ -10,10 +10,11 @@ export const fetchBooks = createAsyncThunk('books/fetchBooks', async (appId = 's
   }
 });
 
-export const addBook = createAsyncThunk('books/addNewbook', async (book, { rejectWithValue }) => {
+export const addBook = createAsyncThunk('books/addNewbook', async (newBook, { rejectWithValue }) => {
   try {
-    const response = await axios.post('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/sMkThm8S72y7VovqTFP8/books', book);
-    return response.json();
+    const response = await axios.post('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/sMkThm8S72y7VovqTFP8/books', newBook);
+    const { data } = response;
+    return { data, newBook };
   } catch (error) {
     return rejectWithValue('Failed to add new book');
   }
@@ -60,8 +61,11 @@ const BookSlice = createSlice({
         state.isLoading = false;
         state.error = action.payload;
       })
-      .addCase(addBook.rejected, (state, action) => {
-        state.error = action.payload;
+      .addCase(addBook.fulfilled, (state, action) => {
+        state.bookItems.push(action.payload.newBook);
+      })
+      .addCase(addBook.pending, (state) => {
+        state.isLoading = true;
       });
   },
 });
