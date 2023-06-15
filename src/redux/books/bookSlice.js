@@ -1,16 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-// export const addNewApp = createAsyncThunk('books/addNewAPP', async (rejectWithValue) => {
-//   try {
-//     const response = await axios.post('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/');
-//     console.log(response.data);
-//     return response;
-//   } catch (err) {
-//     return rejectWithValue('Failed to create a new app');
-//   }
-// });
-
 export const fetchBooks = createAsyncThunk('books/fetchBooks', async (appId = 'sMkThm8S72y7VovqTFP8', { rejectWithValue }) => {
   try {
     const response = await axios.get(`https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${appId}/books`);
@@ -20,41 +10,17 @@ export const fetchBooks = createAsyncThunk('books/fetchBooks', async (appId = 's
   }
 });
 
-export const addNewBook = createAsyncThunk('books/addNewbook', async (book = {
-  item_id: 'item3',
-  title: 'The Selfish Gene',
-  author: 'Richard Dawkins',
-  category: 'Nonfiction',
-}) => {
+export const addBook = createAsyncThunk('books/addNewbook', async (book, { rejectWithValue }) => {
   try {
     const response = await axios.post('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/sMkThm8S72y7VovqTFP8/books', book);
     return response.json();
-  } catch (err) {
-    return err.message;
+  } catch (error) {
+    return rejectWithValue('Failed to add new book');
   }
 });
 
 const initialState = {
-  bookItems: [
-    // {
-    //   item_id: 'item1',
-    //   title: 'The Great Gatsby',
-    //   author: 'John Smith',
-    //   category: 'Fiction',
-    // },
-    // {
-    //   item_id: 'item2',
-    //   title: 'Anna Karenina',
-    //   author: 'Leo Tolstoy',
-    //   category: 'Fiction',
-    // },
-    // {
-    //   item_id: 'item3',
-    //   title: 'The Selfish Gene',
-    //   author: 'Richard Dawkins',
-    //   category: 'Nonfiction',
-    // }
-  ],
+  bookItems: [],
   isLoading: true,
   error: undefined,
 };
@@ -63,11 +29,6 @@ const BookSlice = createSlice({
   name: 'books',
   initialState,
   reducers: {
-    addBook: (state, action) => {
-      if (action.payload.title !== '' && action.payload.author !== '') {
-        state.bookItems.push(action.payload);
-      }
-    },
     removeBook: (state, action) => {
       state.bookItems = state.bookItems.filter((book) => book.item_id !== action.payload);
     },
@@ -99,11 +60,11 @@ const BookSlice = createSlice({
         state.isLoading = false;
         state.error = action.payload;
       })
-      .addCase(addNewBook.fulfilled, (action) => {
-        console.log(action.paylod);
+      .addCase(addBook.rejected, (state, action) => {
+        state.error = action.payload;
       });
   },
 });
 
-export const { addBook, removeBook } = BookSlice.actions;
+export const { removeBook } = BookSlice.actions;
 export default BookSlice.reducer;

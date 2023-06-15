@@ -1,8 +1,16 @@
 // import PropTypes from 'prop-types';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import 'styles/bookListAndInput.scss';
+import { useEffect } from 'react';
+import { fetchBooks } from 'redux/books/bookSlice';
 import BookItem from './BookItem';
 
 const BooksList = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchBooks());
+  }, [dispatch]);
+
   const { bookItems, isLoading, error } = useSelector((state) => state.books);
   return (
     <ul className="books-list">
