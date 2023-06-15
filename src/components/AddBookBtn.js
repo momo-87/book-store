@@ -1,7 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { addBook, fetchBooks } from 'redux/books/bookSlice';
 import { useEffect } from 'react';
-// import HandleAddBook from './HandleAddBook';
 
 const AddBookBtn = (newId, newTitle, newAuthor) => {
   const dispatch = useDispatch();

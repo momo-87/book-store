@@ -1,4 +1,3 @@
-// import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import 'styles/bookListAndInput.scss';
 import { useEffect } from 'react';
@@ -24,7 +23,3 @@ const BooksList = () => {
 };
 
 export default BooksList;
-
-// BooksList.propTypes = {
-//   books: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
-// };
