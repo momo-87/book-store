@@ -29,6 +29,7 @@
           text-decoration: none;
           font-size: 0.7rem;
           color: #121212;
+          font-family: Montserrat, sans-serif;
         }
       }
     }
@@ -47,25 +48,26 @@
   }
 }
 
-@media only screen and (min-width: 1600px) {
+@media only screen and (min-width: 768px) {
   nav {
     height: 5.875rem;
 
     div.logo-menu-box {
-      width: 42.3%;
+      width: 35.15%;
+      margin-left: 7.14%;
       justify-content: space-between;
 
       div.logo-box {
-        width: 40.5%;
-        margin-left: 7.14%;
+        width: 48.77%;
         font-size: 1.875rem;
       }
 
       ul {
-        width: 34.63%;
+        width: 41.67%;
 
         li a {
           font-size: 0.813rem;
+          letter-spacing: 1.9px;
         }
       }
     }

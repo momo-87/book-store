@@ -27,10 +27,11 @@ const AddBookBtn = (newId, newTitle, newAuthor) => {
   };
   return (
     <button
+      className="add-book"
       onClick={handleButtonClick(newBook)}
       type="button"
     >
-      Add Book
+      ADD BOOK
     </button>
   );
 };

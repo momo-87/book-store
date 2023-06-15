@@ -11,24 +11,28 @@ const BookInput = () => {
   return (
     <form>
       {error ? <p>{error}</p> : undefined}
-      <span>ADD NEW BOOK</span>
-      <input
-        type="text"
-        placeholder="Book title"
-        onChange={(e) => {
-          setTitle(e.target.value.trim());
-          setId(uuidv4());
-        }}
-      />
-      <input
-        type="text"
-        placeholder="Author"
-        onChange={(e) => {
-          setAuthor(e.target.value.trim());
-          setId(uuidv4());
-        }}
-      />
-      <AddBookBtn newId={id} newTitle={title} newAuthor={author} />
+      <span className="form-title">ADD NEW BOOK</span>
+      <div className="inputs-container">
+        <input
+          className="book-title"
+          type="text"
+          placeholder="Book title"
+          onChange={(e) => {
+            setTitle(e.target.value.trim());
+            setId(uuidv4());
+          }}
+        />
+        <input
+          className="book-author"
+          type="text"
+          placeholder="Author"
+          onChange={(e) => {
+            setAuthor(e.target.value.trim());
+            setId(uuidv4());
+          }}
+        />
+        <AddBookBtn newId={id} newTitle={title} newAuthor={author} />
+      </div>
     </form>
   );
 };
